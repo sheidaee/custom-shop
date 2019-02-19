@@ -1,0 +1,7 @@
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://sick-fits-p-f3457562cf.herokuapp.com/sick-fits-p/dev
+datamodel: datamodel.prisma
+secret:${env:PRISMA_SECRET}
+hooks:
+    post-deploy:
+        - graphql get-schema -p prisma
